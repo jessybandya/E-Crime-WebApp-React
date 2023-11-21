@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 2s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+@media (min-width: 768px){
+  .home{
+    padding: 0px 25px 0px 25px;
+    background: transparent;
+  }
+  .cards{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  .card{
+    width: 25%;
+    gap: 5px;
+    height: 110px;
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-sizing: border-box;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
+    transition: 0.5s;
+    display: flex;
+    justify-content: space-between;
+    border: 2px solid #3498db;
+  }
+}
+
+
+@media (max-width: 768px){
+  .home{
+    padding: 0px 5px 0px 5px;
+    background: transparent;
+  }
+  .cards{
+    display: block;
+    flex-direction: row;
+    margin-top: 0px;
+  }
+  .card{
+    width: 100%;
+    margin-top: 10px;
+    height: 110px;
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-sizing: border-box;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
+    transition: 0.5s;
+    display: flex;
+    justify-content: space-between;
+    border: 2px solid #3498db;
+  }
+  .search-div{
+    flex-wrap: wrap;
+  }
+}
+
+.card-left p{
+  font-size: 17px;
+  font-weight: bold;
+  margin-top: 25px;
+}
+
+.card-right{
+ height: 60px;
+  width: 60px;
+  background: #3498db;
+  border-radius: 30px;
+  color: #fff;
+  padding: 17px;
+}
+.leaflet-container {
+  width: 100%;
+  height: 50vh;
+}
