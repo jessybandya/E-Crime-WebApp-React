@@ -31,13 +31,13 @@ function Admin() {
   }, [])
 
   React.useEffect(() => {
-    db.collection('crimes').where('status', '==', 'pending').onSnapshot((snapshot) => {
+    db.collection('crimes').where('visibility', '==', false).onSnapshot((snapshot) => {
       setPendingCrimes(snapshot.docs.map((doc) => doc.data()))
     })
   }, [])
 
   React.useEffect(() => {
-    db.collection('crimes').where('status', '==', 'completed').onSnapshot((snapshot) => {
+    db.collection('crimes').where('visibility', '==', true).onSnapshot((snapshot) => {
       setCompletedCrimes(snapshot.docs.map((doc) => doc.data()))
     })
   }, [])
@@ -48,7 +48,7 @@ function Admin() {
     <TotalCard title='Total Users' number={users?.length} icon={SupervisedUserCircleIcon} />
     <TotalCard title='Total Crime Cases' number={crimes?.length} icon={SupervisedUserCircleIcon} />
     <TotalCard title='Pending Crime Cases' number={pendingCrimes?.length} icon={SupervisedUserCircleIcon} />
-    <TotalCard title='Completed Crime Cases' number={completedCrimes?.length} icon={SupervisedUserCircleIcon} />
+    <TotalCard title='Approved Crime Cases' number={completedCrimes?.length} icon={SupervisedUserCircleIcon} />
  </div>
 
 

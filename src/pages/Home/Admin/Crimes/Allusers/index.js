@@ -86,6 +86,7 @@ const getCurrentPosts = () => {
                     media={post?.media}
                     number={index+1}
                     status={post?.status}
+                    visibility={post?.visibility}
                     />
                   ))
   }

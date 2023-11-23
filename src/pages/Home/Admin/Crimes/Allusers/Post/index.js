@@ -28,8 +28,8 @@ import Map from './Map';
 
 
 
-function Post({ crimeId, title, description, category, fileType, fromId, timestamp, lat, long, media, number, status }) {
-  const [completed, setCompleted] = useState('completed')
+function Post({ crimeId, title, description, category, fileType, fromId, timestamp, lat, long, media, number, status, visibility }) {
+  const [completed, setCompleted] = useState(true)
   const [open, setOpen] = React.useState(false);
   const [loading, setLoading] = React.useState(false);
   const [openModalView, setOpenModalView] = React.useState(false);
@@ -44,7 +44,7 @@ function Post({ crimeId, title, description, category, fileType, fromId, timesta
   const updateFun = () => {
     setLoading(true)
     db.collection('crimes').doc(crimeId).update({
-      status: completed,
+      visibility: completed,
     })
     toast.success(`Successfully Updated crime case status!`, {
       position: "top-center",
@@ -101,7 +101,7 @@ function Post({ crimeId, title, description, category, fileType, fromId, timesta
         </TableCell>
         <TableCell align='right'>
             
-          {status === 'pending' ? <span style={{color:'red'}}>{status}</span> : <span style={{color:'#3498db'}}>{status}</span>}                 
+          {visibility === false ? <span style={{color:'red'}}>Pending</span> : <span style={{color:'#3498db'}}>Approved</span>}                 
         </TableCell>
         <TableCell align='right'>
           <RemoveRedEyeIcon onClick={() => setOpenModalView(true)} style={{color:'#3498db', cursor: 'pointer'}}/>
